@@ -1,13 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { 
+  MdToolbarModule, 
+  MdIconModule, 
+  MdInputModule, 
+  MdCardModule, 
+  MdButtonModule 
+} from '@angular/material';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MdToolbarModule,
+    MdIconModule,
+    MdInputModule,
+    MdCardModule,
+    MdButtonModule
   ],
   exports: [
-    CommonModule
+    CommonModule,
+    MdToolbarModule,
+    MdIconModule,
+    MdInputModule,
+    MdCardModule,
+    MdButtonModule
   ],
   declarations: []
 })
 export class SharedModule { }
+ 
