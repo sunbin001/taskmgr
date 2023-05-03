@@ -1,0 +1,14 @@
+name: Jenkins
+on: pull_request
+
+jobs:
+  jenkins:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Jenkins eslint check
+        env:
+          JENKINS_URL: "<Jenkins任务的URL>"
+        run: |
+          curl -X POST "$JENKINS_URL/build" \
+           --user jenkinsUser:jenkinsUserAPItoken \
+           --data-urlencode json='{"parameter": [{"name":"gitUrl", "value":"${{ github.event.pull_request.head.repo.git_url }}"}]}' 
